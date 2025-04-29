@@ -1,9 +1,12 @@
 {:aliases  {:dev {:extra-paths ["development/src"]
 
-                  :extra-deps {org.clojure/clojure {:mvn/version "1.12.0"}}}
+                  :extra-deps {poly/detector {:local/root "components/detector"}
+                               poly/grid     {:local/root "components/grid"}
 
-            :test {:extra-paths []}
+                               org.clojure/clojure {:mvn/version "1.12.0"}}}
+
+            :test {:extra-paths ["components/detector/test"
+                                 "components/grid/test"]}
 
             :poly {:main-opts ["-m" "polylith.clj.core.poly-cli.core"]
                    :extra-deps {polylith/clj-poly {:mvn/version "0.3.22-SNAPSHOT"}}}}}
-
