@@ -1,7 +1,7 @@
 (ns tengstrand.grid.extract)
 
 (defn within-grid?
-  "checks whether an invader is inside a radar image"
+  "Checks whether an invader is inside a radar image"
   [{radar-width :width
     radar-height :height}
    {invader-width :width
