@@ -23,12 +23,12 @@
   "Extracts an invader from a radar image.
    The within-grid? is used for the sake of robustness, but could be removed."
   [{radar-grid :grid
-    :as radar}
+    :as radar-image}
    {invader-width :width
     invader-height :height
     :as invader}
    x y]
-  (when (within-grid? radar invader x y)
+  (when (within-grid? radar-image invader x y)
     {:x x
      :y y
      :width invader-width
@@ -40,10 +40,10 @@
   "Extracts all possible invaders (rectangles with the same with and height) that fit a radar image"
   [{radar-width :width
     radar-height :height
-    :as radar}
+    :as radar-image}
    {invader-width :width
     invader-height :height
     :as invader}]
   (for [y (range (- radar-height invader-height))
         x (range (- radar-width invader-width))]
-    (extract-invader radar invader x y)))
+    (extract-invader radar-image invader x y)))
