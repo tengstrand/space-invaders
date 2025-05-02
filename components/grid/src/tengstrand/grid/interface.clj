@@ -9,5 +9,5 @@
 
 (defn extract-invaders
   "Extracts all possible invaders (rectangles with the same with and height) that fit a radar image"
-  [radar invader]
-  (extract/extract-invaders radar invader))
+  [radar-image invader]
+  (extract/extract-invaders radar-image invader))
